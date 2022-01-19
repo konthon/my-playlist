@@ -2,7 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 import FollowButton from 'components/FollowButton'
+import PlayButton from 'components/PlayButton'
 import TabBar from 'components/TabBar'
+import MoreIcon from 'Icons/MoreIcon'
+
+const COVER = 'https://source.unsplash.com/random/2200x1200/'
 
 const Wrapper = styled.div`
   background-color: var(--background-elevated-highlight);
@@ -18,6 +22,21 @@ const Container = styled.div`
 `
 const ContentWrapper = styled.div`
   padding: 16px;
+  .section-top {
+    display: flex;
+    justify-content: space-between;
+    .action-section {
+      .action-section__buttons {
+        .more-icon {
+          color: var(--text-subdued);
+          transform: rotate(90deg);
+          position: relative;
+          top: 6px;
+          left: 16px;
+        }
+      }
+    }
+  }
 `
 
 const Title = styled.h1`
@@ -47,14 +66,22 @@ const PlaylistPage = () => {
   return (
     <Wrapper>
       <Container>
-        <BackgroundParallax background='https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg'>
+        <BackgroundParallax background={COVER}>
           <Title>ArtistName</Title>
         </BackgroundParallax>
         <ContentWrapper>
-          <ListenerCount>
-            {(123456789).toLocaleString()} monthly listeners
-          </ListenerCount>
-          <FollowButton isFollowing />
+          <div className='section-top'>
+            <div className='action-section'>
+              <ListenerCount>
+                {(123456789).toLocaleString()} monthly listeners
+              </ListenerCount>
+              <div className='action-section__buttons'>
+                <FollowButton isFollowing />
+                <MoreIcon className='more-icon' />
+              </div>
+            </div>
+            <PlayButton />
+          </div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec
             metus sed augue gravida malesuada. Nam sit amet imperdiet lectus,
