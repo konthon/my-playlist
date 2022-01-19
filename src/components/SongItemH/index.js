@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import MoreIcon from 'icons/MoreIcon'
+import { ReactComponent as MoreIcon } from 'icons/more.svg'
 
 const Wrapper = styled.div`
   display: flex;

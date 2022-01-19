@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import PlayIcon from 'icons/PlayIcon'
+import { ReactComponent as PlayIcon } from 'icons/play.svg'
 
 const Wrapper = styled.button`
   --play-button: 54px;

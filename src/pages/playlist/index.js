@@ -5,9 +5,10 @@ import MainLayout from 'layouts/MainLayout'
 import FollowButton from 'components/FollowButton'
 import PlayButton from 'components/PlayButton'
 import Section from 'components/Section'
-
-import MoreIcon from 'icons/MoreIcon'
 import SongItemH from 'components/SongItemH'
+
+import { ReactComponent as MoreIcon } from 'icons/more.svg'
+import AboutCard from 'components/AboutCard'
 
 const COVER = 'https://source.unsplash.com/random/2200x1200/'
 
@@ -119,7 +120,13 @@ const PlaylistPage = () => {
             ))}
           </SongListWrapper>
         </Section>
-        <Section title='About'>test</Section>
+        <Section title='About'>
+          <AboutCard background='https://source.unsplash.com/random/500x500/'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+            molestie sodales rutrum. Pellentesque scelerisque est sit amet
+            tortor euismod posuere. Integer ac nibh semper.
+          </AboutCard>
+        </Section>
       </ContentWrapper>
     </MainLayout>
   )
