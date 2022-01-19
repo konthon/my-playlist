@@ -8,7 +8,7 @@ import SearchIcon from 'components/IconMenu/SearchIcon'
 const Wrapper = styled.div`
   display: flex;
   margin: 0 auto;
-  max-width: 375px;
+  /* max-width: 375px; */
   position: fixed;
   bottom: 0;
   left: 0;
