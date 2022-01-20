@@ -8,7 +8,7 @@ const Wrapper = styled.header`
   left: 0;
   right: 0;
   padding: 20px 16px;
-  background: gray;
+  background: #364031;
   text-align: center;
   font-weight: 700;
 `

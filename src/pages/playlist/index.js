@@ -11,8 +11,9 @@ import SongItemH from 'components/SongItemH'
 import { ReactComponent as MoreIcon } from 'icons/more.svg'
 import AboutCard from 'components/AboutCard'
 
-const TITLE = 'ArtistName'
-const COVER = 'https://source.unsplash.com/random/2200x1200/'
+const TITLE = 'PAIRPITCH'
+const COVER =
+  'https://scontent.fbkk2-8.fna.fbcdn.net/v/t1.15752-9/271790847_1284941788656200_7664182311771782744_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFycoKXGH0vkx5nmI78j7gvWp5OeQYFPbZank55BgU9tncFfTeAtQKdOWWmhN8gJ_LEb_T_9vXPZmFtmlT6Qja1&_nc_ohc=mDeGDuZGcVcAX_4IiaB&tn=jarqpZDyQpoO5FCF&_nc_ht=scontent.fbkk2-8.fna&oh=03_AVIFOv0y0w_MxAv7fMQY3xotQwIJ_bfBR0gDZlnhgw6aPg&oe=620F2D0D'
 
 const StickyWrapper = styled.div`
   z-index: 1080;
@@ -97,11 +98,15 @@ const PlaylistPage = () => {
     <MainLayout title={TITLE}>
       <Parallax
         bgImage={COVER}
+        bgImageStyle={{
+          paddingLeft: '60px',
+          marginTop: '-50px',
+        }}
         alt='cover'
         strength={200}
         blur={{ min: -20, max: 20 }}
       >
-        <div style={{ height: 375 }}>
+        <div style={{ height: 375, backdropFilter: 'brightness(0.8)' }}>
           <Title>{TITLE}</Title>
         </div>
       </Parallax>
@@ -113,7 +118,7 @@ const PlaylistPage = () => {
         </StickyWrapper>
         <div className='action-section'>
           <ListenerCount>
-            {(123456789).toLocaleString()} monthly listeners
+            {(1221998).toLocaleString()} monthly listeners
           </ListenerCount>
           <div className='action-section__buttons'>
             <FollowButton isFollowing />
