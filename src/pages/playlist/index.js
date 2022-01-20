@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Background, Parallax } from 'react-parallax'
+import { Parallax } from 'react-parallax'
 
 import MainLayout from 'layouts/MainLayout'
 import FollowButton from 'components/FollowButton'

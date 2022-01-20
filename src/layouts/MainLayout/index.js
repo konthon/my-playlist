@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import TabBar from 'components/TabBar'
 import Header from 'components/Header'
+import Player from 'components/Player'
 
 const Wrapper = styled.div`
   background-color: var(--background-elevated-highlight);
@@ -24,6 +25,7 @@ const MainLayout = (props) => {
       <Container>
         <Header>{title}</Header>
         <main>{children}</main>
+        <Player.Mini title='Songsamsi' subtitle='AlbumName' />
         <TabBar />
       </Container>
     </Wrapper>
