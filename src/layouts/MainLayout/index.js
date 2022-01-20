@@ -2,12 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 
 import TabBar from 'components/TabBar'
+import Header from 'components/Header'
 
 const Wrapper = styled.div`
   background-color: var(--background-elevated-highlight);
   min-height: 100vh;
 `
-const Container = styled.main`
+const Container = styled.div`
   position: relative;
   /* max-width: 375px; */
   min-height: 100vh;
@@ -17,11 +18,12 @@ const Container = styled.main`
 `
 
 const MainLayout = (props) => {
-  const { children } = props
+  const { children, title } = props
   return (
     <Wrapper>
       <Container>
-        {children}
+        <Header>{title}</Header>
+        <main>{children}</main>
         <TabBar />
       </Container>
     </Wrapper>

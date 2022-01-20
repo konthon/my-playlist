@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.button`
@@ -8,12 +8,21 @@ const Wrapper = styled.button`
   background-color: transparent;
   color: inherit;
   font-weight: 700;
+  transition: all 250ms;
+  &:active {
+    background-color: var(--background-tinted-base);
+  }
 `
 
-const FollowButton = ({ isFollowing = false }) => {
+const FollowButton = ({ isFollowing = false, onClick }) => {
+  const [follow, setFollow] = useState(isFollowing)
+  const onClickButton = (event) => {
+    onClick?.(event)
+    setFollow((curr) => !curr)
+  }
   return (
-    <Wrapper className={isFollowing ? 'is-following' : ''}>
-      {isFollowing ? 'Following' : 'Follow'}
+    <Wrapper className={follow ? 'is-following' : ''} onClick={onClickButton}>
+      {follow ? 'Following' : 'Follow'}
     </Wrapper>
   )
 }

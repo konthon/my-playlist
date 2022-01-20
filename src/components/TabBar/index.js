@@ -5,7 +5,7 @@ import HomeIcon from 'components/IconMenu/HomeIcon'
 import LibraryIcon from 'components/IconMenu/LibraryIcon'
 import SearchIcon from 'components/IconMenu/SearchIcon'
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
   z-index: 1000;
   display: flex;
   margin: 0 auto;
