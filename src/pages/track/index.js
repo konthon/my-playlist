@@ -57,7 +57,7 @@ const TrackPage = () => {
 
   useEffect(() => {
     spotifyApi
-      .getMyTopTracks({ limit: 10, offset: 0, time_range: 'medium_term' })
+      .getMyTopTracks({ limit: 10, offset: 0, time_range: 'short_term' })
       .then(
         function (data) {
           console.log('Top Tracks', data.items)
@@ -88,7 +88,7 @@ const TrackPage = () => {
         </div>
       </Parallax>
       <ContentWrapper>
-        <Section title='Last 6 Months'>
+        <Section title='Last 4 Weeks'>
           <SongListWrapper>
             {topTrack.length > 0 &&
               topTrack.map((track, index) => (

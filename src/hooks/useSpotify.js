@@ -25,14 +25,11 @@ const useSpotify = () => {
     clientSecret: CLIENT_SECRET,
     redirectUri: REDIRECT_URI,
   })
+  spotifyApi.setAccessToken(
+    'BQC6-y8qLm0W7XxYB9RGzCuXII8rVk7pChQLJfVSgVZ6OgGLSqpkCxm-vXr4CAGqZy-1joPvjU8Nzn_YC3AFtGZzXlU1-i0ReHV7d2WIw7YOHDdunICFT-oB-LstDB5W71LHbp0SV3SgkvEw7E4Ta76ifw9tZGkbeZ4HkDBACsEr46b98fSB'
+  )
 
-  const setAccessToken = (accessToken) =>
-    spotifyApi.setAccessToken(
-      accessToken ||
-        'BQDzQY2CluVzHQRm2l3Cda3EjSvUe95u0ctIxtYWa3SWy9SCzL2KSpoIBnyzYzCS7buGgFP1GgEkE72HV3tViBQaco2E0JE5fjkwk0ipkuwTh-iANar1LJ7Xe-QQXc0-35Fyydrz1LXj0UHN5ZeI89tGQdX3pqQuBN5Gc5xzFEwuqn7vtBeV'
-    )
-
-  return { spotifyApi, setAccessToken }
+  return { spotifyApi }
 }
 
 export default useSpotify

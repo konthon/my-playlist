@@ -52,7 +52,7 @@ const ArtistPage = () => {
 
   useEffect(() => {
     spotifyApi
-      .getMyTopArtists({ limit: 10, offset: 0, time_range: 'medium_term' })
+      .getMyTopArtists({ limit: 10, offset: 0, time_range: 'short_term' })
       .then(
         function (data) {
           console.log('Top Artists', data.items)
@@ -89,7 +89,7 @@ const ArtistPage = () => {
                   key={artist.id}
                   index={index + 1}
                   title={artist.name}
-                  subtitle={artist.followers.total.toLocaleString()}
+                  subtitle={artist.genres[0]}
                   cover={artist.images.find((item) => item.height < 200).url}
                 />
               ))}
