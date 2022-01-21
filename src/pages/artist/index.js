@@ -81,7 +81,7 @@ const ArtistPage = () => {
         </div>
       </Parallax>
       <ContentWrapper>
-        <Section title='Last 6 Months'>
+        <Section title='Last 4 Weeks'>
           <SongListWrapper>
             {topArtist.length > 0 &&
               topArtist.map((artist, index) => (

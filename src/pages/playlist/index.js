@@ -70,30 +70,30 @@ const PlaylistPage = () => {
     {
       cover:
         'https://images.genius.com/c9637dd9f483dfac5ac514f3bab33c51.600x600x1.jpg',
-      title: 'Happy',
+      title: 'Happy Fabulous Birthday 🎂',
       subtitle: '23,356,835',
     },
     {
       cover:
         'https://s.isanook.com/jo/0/rp/rc/w300h300/ya0xa0m1w0/aHR0cDovL2ltYWdlLmpvb3guY29tL0pPT1hjb3Zlci8wL2Y5ZjU2ZjA3YmRhNmU5MGIvNjQwLmpwZw==.jpg',
-      title: '24th',
+      title: 'Wish You All The Good Thing',
       subtitle: '2,760,678',
     },
     {
       cover: 'https://i1.sndcdn.com/artworks-Pwscy9pi2fO9-0-t500x500.jpg',
-      title: 'Birthday',
+      title: 'Be Healthy and Happy',
       subtitle: '1,452,376',
     },
     {
       cover:
         'https://upload.wikimedia.org/wikipedia/commons/e/e7/%22AM%22_%28Arctic_Monkeys%29.jpg',
-      title: 'To You',
+      title: 'May This Year',
       subtitle: '1,578,647',
     },
     {
       cover:
         'https://media.pitchfork.com/photos/5db364230c9c6a0008f6ba60/1:1/w_600/Turnover_Altogether.jpg',
-      title: '🎂',
+      title: 'Special As You Are',
       subtitle: '998,416',
     },
   ]

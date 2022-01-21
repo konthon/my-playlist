@@ -53,11 +53,11 @@ const TabBar = () => {
       </TabButton>
       <TabButton>
         <SearchIcon />
-        <div className='tab-name'>Search</div>
+        <div className='tab-name'>Top Tracks </div>
       </TabButton>
       <TabButton>
         <LibraryIcon />
-        <div className='tab-name'>Your Library</div>
+        <div className='tab-name'>Top Artist</div>
       </TabButton>
     </Wrapper>
   )
