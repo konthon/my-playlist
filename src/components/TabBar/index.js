@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useLocation, useMatch, useNavigate } from 'react-router-dom'
 
 import HomeIcon from 'components/IconMenu/HomeIcon'
 import LibraryIcon from 'components/IconMenu/LibraryIcon'
@@ -43,22 +44,37 @@ const TabButton = styled.button`
     text-align: center;
   }
 `
+const NavButton = (props) => {
+  const { to, children, ...restProps } = props
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
+  const isMatched = to === pathname
+  return (
+    <TabButton
+      className={isMatched ? 'tab-active' : ''}
+      onClick={() => navigate(to)}
+      {...restProps}
+    >
+      {children}
+    </TabButton>
+  )
+}
 
 const TabBar = () => {
   return (
     <Wrapper>
-      <TabButton className='tab-active'>
+      <NavButton to='/'>
         <HomeIcon isActive />
         <div className='tab-name'>Home</div>
-      </TabButton>
-      <TabButton>
+      </NavButton>
+      <NavButton to='/artist'>
         <SearchIcon />
         <div className='tab-name'>Search</div>
-      </TabButton>
-      <TabButton>
+      </NavButton>
+      <NavButton to='/track'>
         <LibraryIcon />
         <div className='tab-name'>Your Library</div>
-      </TabButton>
+      </NavButton>
     </Wrapper>
   )
 }
