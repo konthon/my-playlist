@@ -12,7 +12,7 @@ import { ReactComponent as MoreIcon } from 'icons/more.svg'
 import AboutCard from 'components/AboutCard'
 import SpotifyWebAPI from 'spotify-web-api-js'
 
-const TITLE = 'PAIRPITCH'
+const TITLE = 'Top Tracks'
 const COVER =
   'https://scontent.fbkk2-8.fna.fbcdn.net/v/t1.15752-9/271790847_1284941788656200_7664182311771782744_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFycoKXGH0vkx5nmI78j7gvWp5OeQYFPbZank55BgU9tncFfTeAtQKdOWWmhN8gJ_LEb_T_9vXPZmFtmlT6Qja1&_nc_ohc=mDeGDuZGcVcAX_4IiaB&tn=jarqpZDyQpoO5FCF&_nc_ht=scontent.fbkk2-8.fna&oh=03_AVIFOv0y0w_MxAv7fMQY3xotQwIJ_bfBR0gDZlnhgw6aPg&oe=620F2D0D'
 
@@ -66,7 +66,7 @@ const SongListWrapper = styled.div`
   gap: 16px;
 `
 
-const PlaylistPage = () => {
+const TrackPage = () => {
   const authEndpoint = 'https://accounts.spotify.com/authorize'
   const redirectUri = window.location.origin + '/'
   const clientId = 'a2a3e83d58b845d5ae090687dec54ade'
@@ -90,22 +90,9 @@ const PlaylistPage = () => {
     'BQDzQY2CluVzHQRm2l3Cda3EjSvUe95u0ctIxtYWa3SWy9SCzL2KSpoIBnyzYzCS7buGgFP1GgEkE72HV3tViBQaco2E0JE5fjkwk0ipkuwTh-iANar1LJ7Xe-QQXc0-35Fyydrz1LXj0UHN5ZeI89tGQdX3pqQuBN5Gc5xzFEwuqn7vtBeV'
   )
 
-  const [topArtist, setTopArtist] = useState([])
   const [topTrack, setTopTrack] = useState([])
 
   useEffect(() => {
-    spotifyApi
-      .getMyTopArtists({ limit: 10, offset: 0, time_range: 'medium_term' })
-      .then(
-        function (data) {
-          console.log('Top Artists', data.items)
-          setTopArtist(data.items)
-        },
-        function (err) {
-          console.error(err)
-        }
-      )
-
     spotifyApi
       .getMyTopTracks({ limit: 10, offset: 0, time_range: 'medium_term' })
       .then(
@@ -118,42 +105,13 @@ const PlaylistPage = () => {
         }
       )
   }, [])
-  const popularSongs = [
-    {
-      cover:
-        'https://images.genius.com/c9637dd9f483dfac5ac514f3bab33c51.600x600x1.jpg',
-      title: 'Happy',
-      subtitle: '23,356,835',
-    },
-    {
-      cover:
-        'https://s.isanook.com/jo/0/rp/rc/w300h300/ya0xa0m1w0/aHR0cDovL2ltYWdlLmpvb3guY29tL0pPT1hjb3Zlci8wL2Y5ZjU2ZjA3YmRhNmU5MGIvNjQwLmpwZw==.jpg',
-      title: '24th',
-      subtitle: '2,760,678',
-    },
-    {
-      cover: 'https://i1.sndcdn.com/artworks-Pwscy9pi2fO9-0-t500x500.jpg',
-      title: 'Birthday',
-      subtitle: '1,452,376',
-    },
-    {
-      cover:
-        'https://upload.wikimedia.org/wikipedia/commons/e/e7/%22AM%22_%28Arctic_Monkeys%29.jpg',
-      title: 'To You',
-      subtitle: '1,578,647',
-    },
-    {
-      cover:
-        'https://media.pitchfork.com/photos/5db364230c9c6a0008f6ba60/1:1/w_600/Turnover_Altogether.jpg',
-      title: '🎂',
-      subtitle: '998,416',
-    },
-  ]
 
   return (
     <MainLayout title={TITLE}>
       <Parallax
-        bgImage={COVER}
+        bgImage={
+          topTrack?.[0]?.album?.images?.find((item) => item.height > 500).url
+        }
         bgImageStyle={{
           paddingLeft: '60px',
           marginTop: '-50px',
@@ -167,43 +125,25 @@ const PlaylistPage = () => {
         </div>
       </Parallax>
       <ContentWrapper>
-        <StickyWrapper>
-          <div className='play-button-wrapper'>
-            <PlayButton hasShuffle />
-          </div>
-        </StickyWrapper>
-        <div className='action-section'>
-          <ListenerCount>
-            {(1221998).toLocaleString()} monthly listeners
-          </ListenerCount>
-          <div className='action-section__buttons'>
-            <FollowButton isFollowing />
-            <MoreIcon className='more-icon' />
-          </div>
-        </div>
-        <Section title='Popular'>
+        <Section title='Last 6 Months'>
           <SongListWrapper>
-            {popularSongs.map((song, index) => (
-              <SongItemH
-                key={index}
-                index={index + 1}
-                title={song.title}
-                subtitle={song.subtitle}
-                cover={song.cover}
-              />
-            ))}
+            {topTrack.length > 0 &&
+              topTrack.map((track, index) => (
+                <SongItemH
+                  key={track.id}
+                  index={index + 1}
+                  title={track.name}
+                  subtitle={track.artists[0].name}
+                  cover={
+                    track.album.images.find((item) => item.height < 200).url
+                  }
+                />
+              ))}
           </SongListWrapper>
-        </Section>
-        <Section title='About'>
-          <AboutCard background='https://source.unsplash.com/random/500x500/'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            molestie sodales rutrum. Pellentesque scelerisque est sit amet
-            tortor euismod posuere. Integer ac nibh semper.
-          </AboutCard>
         </Section>
       </ContentWrapper>
     </MainLayout>
   )
 }
 
-export default PlaylistPage
+export default TrackPage
