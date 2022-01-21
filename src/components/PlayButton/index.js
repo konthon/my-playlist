@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   position: relative;
 `
 const MainButton = styled.button`
+  color: var(--background-base);
   background-color: var(--essential-bright-accent);
   width: var(--play-button);
   height: var(--play-button);

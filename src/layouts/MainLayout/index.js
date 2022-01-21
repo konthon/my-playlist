@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 
 import TabBar from 'components/TabBar'
 import Header from 'components/Header'
 import Player from 'components/Player'
 import { AnimatePresence } from 'framer-motion'
+import useTitlebar from 'hooks/useTitlebar'
 
 const Wrapper = styled.div`
   background-color: var(--background-elevated-highlight);
@@ -20,7 +21,7 @@ const Container = styled.div`
 `
 
 const MainLayout = (props) => {
-  const { children, title } = props
+  const { children, title, opacity } = props
   const [isOpenPlayer, setIsOpenPlayer] = useState(false)
 
   const data = {
@@ -32,7 +33,7 @@ const MainLayout = (props) => {
   return (
     <Wrapper>
       <Container>
-        <Header>{title}</Header>
+        <Header opacity={opacity}>{title}</Header>
         <main>{children}</main>
         <AnimatePresence>
           {isOpenPlayer && (
