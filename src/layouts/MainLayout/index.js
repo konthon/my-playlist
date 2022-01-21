@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import TabBar from 'components/TabBar'
 import Header from 'components/Header'
 import Player from 'components/Player'
+import { AnimatePresence } from 'framer-motion'
 
 const Wrapper = styled.div`
   background-color: var(--background-elevated-highlight);
@@ -20,12 +21,35 @@ const Container = styled.div`
 
 const MainLayout = (props) => {
   const { children, title } = props
+  const [isOpenPlayer, setIsOpenPlayer] = useState(false)
+
+  const data = {
+    title: 'Songsamsi',
+    subtitle: 'Album Name',
+    cover: 'https://source.unsplash.com/random/300x300/',
+  }
+
   return (
     <Wrapper>
       <Container>
         <Header>{title}</Header>
         <main>{children}</main>
-        <Player.Mini title='Songsamsi' subtitle='AlbumName' />
+        <AnimatePresence>
+          {isOpenPlayer && (
+            <Player
+              title={data.title}
+              subtitle={data.subtitle}
+              cover={data.cover}
+              onClose={() => setIsOpenPlayer(false)}
+            />
+          )}
+        </AnimatePresence>
+        <Player.Mini
+          title={data.title}
+          subtitle={data.subtitle}
+          cover={data.cover}
+          onOpen={() => setIsOpenPlayer(true)}
+        />
         <TabBar />
       </Container>
     </Wrapper>
