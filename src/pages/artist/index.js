@@ -109,7 +109,7 @@ const ArtistPage = () => {
   return (
     <MainLayout title={TITLE}>
       <Parallax
-        bgImage={topArtist[0].images.find((item) => item.height > 500).url}
+        bgImage={topArtist?.[0]?.images?.find((item) => item.height > 500).url}
         bgImageStyle={{
           paddingLeft: '60px',
           marginTop: '-50px',
@@ -125,15 +125,16 @@ const ArtistPage = () => {
       <ContentWrapper>
         <Section title='Last 6 Months'>
           <SongListWrapper>
-            {topArtist.map((artist, index) => (
-              <SongItemH
-                key={artist.id}
-                index={index + 1}
-                title={artist.name}
-                subtitle={artist.followers.total.toLocaleString()}
-                cover={artist.images.find((item) => item.height < 200).url}
-              />
-            ))}
+            {topArtist.length > 0 &&
+              topArtist.map((artist, index) => (
+                <SongItemH
+                  key={artist.id}
+                  index={index + 1}
+                  title={artist.name}
+                  subtitle={artist.followers.total.toLocaleString()}
+                  cover={artist.images.find((item) => item.height < 200).url}
+                />
+              ))}
           </SongListWrapper>
         </Section>
       </ContentWrapper>
