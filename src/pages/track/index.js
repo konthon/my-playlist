@@ -77,10 +77,6 @@ const TrackPage = () => {
         bgImage={
           topTrack?.[0]?.album?.images?.find((item) => item.height > 500).url
         }
-        bgImageStyle={{
-          paddingLeft: '60px',
-          marginTop: '-50px',
-        }}
         alt='cover'
         strength={200}
         blur={{ min: -20, max: 20 }}
