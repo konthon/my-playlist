@@ -1,16 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-
 import TabBar from 'components/TabBar'
 import Header from 'components/Header'
 import Player from 'components/Player'
 import { AnimatePresence } from 'framer-motion'
 import useTitlebar from 'hooks/useTitlebar'
-import useSpotify from 'hooks/useSpotify'
+import { useSpotifyContext } from 'contexts/spotifyContext'
 
 const Wrapper = styled.div`
   background-color: var(--background-elevated-highlight);
   min-height: 100vh;
+  padding-bottom: env(safe-area-inset-bottom, 8px);
 `
 const Container = styled.div`
   position: relative;
@@ -24,7 +24,7 @@ const Container = styled.div`
 const MainLayout = (props) => {
   const { children, title, opacity } = props
   const [isOpenPlayer, setIsOpenPlayer] = useState(false)
-  const { spotifyApi } = useSpotify()
+  const { spotifyApi } = useSpotifyContext()
   const [track, setTrack] = useState({})
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Parallax } from 'react-parallax'
 
@@ -11,6 +11,7 @@ import SongItemH from 'components/SongItemH'
 import useSpotify from 'hooks/useSpotify'
 
 import useTitlebar from 'hooks/useTitlebar'
+import { useSpotifyContext } from 'contexts/spotifyContext'
 
 import { ReactComponent as MoreIcon } from 'icons/more.svg'
 
@@ -71,6 +72,8 @@ const SongListWrapper = styled.div`
 const PlaylistPage = () => {
   const { spotifyApi } = useSpotify()
   const { intersectRef, opacity } = useTitlebar()
+
+  useSpotifyContext()
 
   const popularSongs = [
     {

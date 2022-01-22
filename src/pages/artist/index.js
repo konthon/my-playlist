@@ -8,6 +8,7 @@ import SongItemH from 'components/SongItemH'
 
 import useSpotify from 'hooks/useSpotify'
 import useTitlebar from 'hooks/useTitlebar'
+import { useSpotifyContext } from 'contexts/spotifyContext'
 
 const TITLE = 'Top Artists'
 
@@ -48,7 +49,7 @@ const SongListWrapper = styled.div`
 
 const ArtistPage = () => {
   const { intersectRef, opacity } = useTitlebar()
-  const { spotifyApi } = useSpotify()
+  const { spotifyApi } = useSpotifyContext()
 
   const [topArtist, setTopArtist] = useState([])
 
@@ -70,10 +71,6 @@ const ArtistPage = () => {
     <MainLayout title={TITLE} opacity={opacity}>
       <Parallax
         bgImage={topArtist?.[0]?.images?.find((item) => item.height > 500).url}
-        bgImageStyle={{
-          paddingLeft: '60px',
-          marginTop: '-50px',
-        }}
         alt='cover'
         strength={200}
         blur={{ min: -20, max: 20 }}

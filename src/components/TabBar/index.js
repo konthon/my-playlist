@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useLocation, useMatch, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 import HomeIcon from 'components/IconMenu/HomeIcon'
 import LibraryIcon from 'components/IconMenu/LibraryIcon'
