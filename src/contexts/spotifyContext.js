@@ -7,12 +7,14 @@ const CLIENT_ID = process.env.REACT_APP_CLIENT_ID
 const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET
 
 const SCOPES = [
-  'user-read-currently-playing',
-  'user-read-recently-played',
-  'user-read-playback-state',
-  'user-top-read',
-  'user-modify-playback-state',
   'streaming',
+  'user-read-email',
+  'user-read-private',
+  // 'user-read-currently-playing',
+  // 'user-read-recently-played',
+  // 'user-read-playback-state',
+  // 'user-top-read',
+  // 'user-modify-playback-state',
 ]
 
 export const SpotifyContext = React.createContext({

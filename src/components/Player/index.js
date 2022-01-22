@@ -82,7 +82,7 @@ const PlaybackWrapper = styled.div`
 `
 
 const Player = (props) => {
-  const { title, subtitle, cover, bg, onClose } = props
+  const { title, subtitle, cover, bg, onClose, onTogglePlay } = props
   return (
     <Wrapper layoutId='player-wrapper' bg={bg}>
       <div className='player-top'>
