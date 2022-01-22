@@ -2,7 +2,7 @@
 import SpotifyWebAPI from 'spotify-web-api-js'
 
 const AUTH_END_POINT = 'https://accounts.spotify.com/authorize'
-const REDIRECT_URI = `${window.location.origin}/`
+const REDIRECT_URI = `${window.location.origin}/redirect`
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID
 const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET
 
@@ -29,7 +29,9 @@ const useSpotify = () => {
     'BQC6-y8qLm0W7XxYB9RGzCuXII8rVk7pChQLJfVSgVZ6OgGLSqpkCxm-vXr4CAGqZy-1joPvjU8Nzn_YC3AFtGZzXlU1-i0ReHV7d2WIw7YOHDdunICFT-oB-LstDB5W71LHbp0SV3SgkvEw7E4Ta76ifw9tZGkbeZ4HkDBACsEr46b98fSB'
   )
 
-  return { spotifyApi }
+  const setAccessToken = (token) => spotifyApi.setAccessToken(token)
+
+  return { spotifyApi, loginUrl, setAccessToken }
 }
 
 export default useSpotify

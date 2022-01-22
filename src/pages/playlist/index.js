@@ -10,6 +10,7 @@ import Section from 'components/Section'
 import SongItemH from 'components/SongItemH'
 
 import useTitlebar from 'hooks/useTitlebar'
+import { useSpotifyContext } from 'contexts/spotifyContext'
 
 import { ReactComponent as MoreIcon } from 'icons/more.svg'
 
@@ -69,6 +70,8 @@ const SongListWrapper = styled.div`
 
 const PlaylistPage = () => {
   const { intersectRef, opacity } = useTitlebar()
+
+  useSpotifyContext()
 
   const popularSongs = [
     {

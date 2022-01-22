@@ -8,6 +8,7 @@ import SongItemH from 'components/SongItemH'
 
 import useSpotify from 'hooks/useSpotify'
 import useTitlebar from 'hooks/useTitlebar'
+import { useSpotifyContext } from 'contexts/spotifyContext'
 
 const TITLE = 'Top Artists'
 
@@ -48,7 +49,7 @@ const SongListWrapper = styled.div`
 
 const ArtistPage = () => {
   const { intersectRef, opacity } = useTitlebar()
-  const { spotifyApi } = useSpotify()
+  const { spotifyApi } = useSpotifyContext()
 
   const [topArtist, setTopArtist] = useState([])
 

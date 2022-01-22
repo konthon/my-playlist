@@ -6,7 +6,7 @@ import MainLayout from 'layouts/MainLayout'
 import Section from 'components/Section'
 import SongItemH from 'components/SongItemH'
 
-import useSpotify from 'hooks/useSpotify'
+import { useSpotifyContext } from 'contexts/spotifyContext'
 import useTitlebar from 'hooks/useTitlebar'
 
 const TITLE = 'Top Tracks'
@@ -53,7 +53,7 @@ const SongListWrapper = styled.div`
 
 const TrackPage = () => {
   const { intersectRef, opacity } = useTitlebar()
-  const { spotifyApi } = useSpotify()
+  const { spotifyApi } = useSpotifyContext()
 
   const [topTrack, setTopTrack] = useState([])
 
