@@ -12,6 +12,7 @@ const SCOPES = [
   'user-read-playback-state',
   'user-top-read',
   'user-modify-playback-state',
+  'streaming',
 ]
 
 export const SpotifyContext = React.createContext({

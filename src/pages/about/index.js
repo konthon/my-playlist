@@ -52,14 +52,15 @@ const AboutPage = () => {
       </Button>
       <ContentWrapper>
         <Cover
-          src='https://scontent.fbkk2-8.fna.fbcdn.net/v/t1.15752-9/271790847_1284941788656200_7664182311771782744_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFycoKXGH0vkx5nmI78j7gvWp5OeQYFPbZank55BgU9tncFfTeAtQKdOWWmhN8gJ_LEb_T_9vXPZmFtmlT6Qja1&_nc_ohc=mDeGDuZGcVcAX_4IiaB&tn=jarqpZDyQpoO5FCF&_nc_ht=scontent.fbkk2-8.fna&oh=03_AVIFOv0y0w_MxAv7fMQY3xotQwIJ_bfBR0gDZlnhgw6aPg&oe=620F2D0D'
+          src='https://cdn.fbsbx.com/v/t59.2708-21/272287975_3121868524723282_3314698787912923290_n.gif?_nc_cat=106&ccb=1-5&_nc_sid=041f46&_nc_eui2=AeGfgkCEhoFqMh2n6nUAIUStz_SvhK_p4bHP9K-Er-nhsc6NSDoiKyxSTCfIDJJmv1fefbUp-4XKLQdH79ZM_93f&_nc_ohc=ZZxXCy_bsM4AX9TS6nR&_nc_ht=cdn.fbsbx.com&oh=03_AVLBfVUetnaUbsy20i5MqW_mJVW4QqfGPT_cr76qXhfAwA&oe=61EDEC55'
           alt='cover'
         />
         <Paragraph>
-          Happy, happy birthday, Pair! <br></br> I hope this year will be your
-          year, with more reasons to smile and more time to rest.<br></br> I
-          wish you all the best and hope you success in everything you do.{' '}
-          <br></br>Have a happy 24th! Love ya!
+          Happy, Happy Birthday, Pair! <br></br> I wish you all the best and
+          hope you success in everything you do. Not sure if I could wish you to
+          be more rich since you already are, maybe even way too much lol.
+          Anyway, have a good health and be a good mom for Pan, Peaky and Mike,
+          my wish goes for them too. Be safe, have fun and have a happy 24th!
           <br></br>
           <br></br>
           Nino

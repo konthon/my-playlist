@@ -79,7 +79,7 @@ const PlaylistPage = () => {
     {
       cover:
         'https://images.genius.com/c9637dd9f483dfac5ac514f3bab33c51.600x600x1.jpg',
-      title: 'Happy Fabulous Birthday 🎂',
+      title: 'Happy Fabulous Birthday',
       subtitle: '23,356,835',
     },
     {
@@ -160,10 +160,9 @@ const PlaylistPage = () => {
         </Section>
         <br />
         <Section title='About'>
-          <AboutCard background={COVER}>
-            I hope this year will be your year, <br></br>with more reasons to
-            smile and more time to rest.I wish you all the best and hope you
-            success in everything you do. <br></br>Have a happy 24th! Love ya!{' '}
+          <AboutCard background='https://scontent.fbkk2-8.fna.fbcdn.net/v/t1.15752-9/271848979_3062286427373984_4204002690391075980_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFgndi4oyn4nk88esJEoeERNh2KLZBxcQg2HYotkHFxCOlR79Rb5SUbjdSetTfaDucaUmRwSNEb-xkGsV1NGOJe&_nc_ohc=diCUONfPVn0AX-UrTdS&_nc_ht=scontent.fbkk2-8.fna&oh=03_AVI2Ty8IVKViirQg5O0L0ZYghJuohHxOUaixLDc1CqMU1g&oe=6211AD09'>
+            Happy, Happy Birthday, Pair!<br></br>I wish you all the best and
+            hope you success in everything you do. Not s...
           </AboutCard>
         </Section>
       </ContentWrapper>

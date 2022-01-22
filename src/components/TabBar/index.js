@@ -5,6 +5,8 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import HomeIcon from 'components/IconMenu/HomeIcon'
 import LibraryIcon from 'components/IconMenu/LibraryIcon'
 import SearchIcon from 'components/IconMenu/SearchIcon'
+import { MdOutlineQueueMusic } from 'react-icons/md'
+import { HiUserGroup } from 'react-icons/hi'
 
 const Wrapper = styled.nav`
   z-index: 1000;
@@ -68,11 +70,11 @@ const TabBar = () => {
         <div className='tab-name'>Home</div>
       </NavButton>
       <NavButton to='/artist'>
-        <SearchIcon />
+        <HiUserGroup size={24} />
         <div className='tab-name'>Top Artists</div>
       </NavButton>
       <NavButton to='/track'>
-        <LibraryIcon />
+        <MdOutlineQueueMusic size={24} />
         <div className='tab-name'>Top Tracks</div>
       </NavButton>
     </Wrapper>

@@ -56,10 +56,12 @@ const TrackPage = () => {
   const { spotifyApi } = useSpotifyContext()
 
   const [topTrack, setTopTrack] = useState([])
+  const [topTrack2, setTopTrack2] = useState([])
+  const [topTrack3, setTopTrack3] = useState([])
 
   useEffect(() => {
     spotifyApi
-      .getMyTopTracks({ limit: 10, offset: 0, time_range: 'short_term' })
+      .getMyTopTracks({ limit: 5, offset: 0, time_range: 'short_term' })
       .then(
         function (data) {
           console.log('Top Tracks', data.items)
@@ -71,11 +73,39 @@ const TrackPage = () => {
       )
   }, [])
 
+  useEffect(() => {
+    spotifyApi
+      .getMyTopTracks({ limit: 5, offset: 0, time_range: 'medium_term' })
+      .then(
+        function (data) {
+          console.log('Top Tracks', data.items)
+          setTopTrack2(data.items)
+        },
+        function (err) {
+          console.error(err)
+        }
+      )
+  }, [])
+
+  useEffect(() => {
+    spotifyApi
+      .getMyTopTracks({ limit: 5, offset: 0, time_range: 'long_term' })
+      .then(
+        function (data) {
+          console.log('Top Tracks', data.items)
+          setTopTrack3(data.items)
+        },
+        function (err) {
+          console.error(err)
+        }
+      )
+  }, [])
+
   return (
     <MainLayout title={TITLE} opacity={opacity}>
       <Parallax
         bgImage={
-          topTrack?.[0]?.album?.images?.find((item) => item.height > 500).url
+          topTrack3?.[0]?.album?.images?.find((item) => item.height > 500).url
         }
         alt='cover'
         strength={200}
@@ -93,6 +123,40 @@ const TrackPage = () => {
         </div>
       </Parallax>
       <ContentWrapper>
+        <Section title='All Time'>
+          <SongListWrapper>
+            {topTrack3.length > 0 &&
+              topTrack3.map((track, index) => (
+                <SongItemH
+                  key={track.id}
+                  index={index + 1}
+                  title={track.name}
+                  subtitle={track.artists[0].name}
+                  cover={
+                    track.album.images.find((item) => item.height < 200).url
+                  }
+                />
+              ))}
+          </SongListWrapper>
+        </Section>
+        <br></br>
+        <Section title='Last 6 Months'>
+          <SongListWrapper>
+            {topTrack2.length > 0 &&
+              topTrack2.map((track, index) => (
+                <SongItemH
+                  key={track.id}
+                  index={index + 1}
+                  title={track.name}
+                  subtitle={track.artists[0].name}
+                  cover={
+                    track.album.images.find((item) => item.height < 200).url
+                  }
+                />
+              ))}
+          </SongListWrapper>
+        </Section>
+        <br></br>
         <Section title='Last 4 Weeks'>
           <SongListWrapper>
             {topTrack.length > 0 &&

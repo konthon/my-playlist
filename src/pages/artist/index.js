@@ -52,14 +52,38 @@ const ArtistPage = () => {
   const { spotifyApi } = useSpotifyContext()
 
   const [topArtist, setTopArtist] = useState([])
+  const [topArtist2, setTopArtist2] = useState([])
+  const [topArtist3, setTopArtist3] = useState([])
 
   useEffect(() => {
     spotifyApi
-      .getMyTopArtists({ limit: 10, offset: 0, time_range: 'short_term' })
+      .getMyTopArtists({ limit: 5, offset: 0, time_range: 'short_term' })
       .then(
         function (data) {
           console.log('Top Artists', data.items)
           setTopArtist(data.items)
+        },
+        function (err) {
+          console.error(err)
+        }
+      )
+    spotifyApi
+      .getMyTopArtists({ limit: 5, offset: 0, time_range: 'medium_term' })
+      .then(
+        function (data) {
+          console.log('Top Artists', data.items)
+          setTopArtist2(data.items)
+        },
+        function (err) {
+          console.error(err)
+        }
+      )
+    spotifyApi
+      .getMyTopArtists({ limit: 5, offset: 0, time_range: 'long_term' })
+      .then(
+        function (data) {
+          console.log('Top Artists', data.items)
+          setTopArtist3(data.items)
         },
         function (err) {
           console.error(err)
@@ -70,7 +94,7 @@ const ArtistPage = () => {
   return (
     <MainLayout title={TITLE} opacity={opacity}>
       <Parallax
-        bgImage={topArtist?.[0]?.images?.find((item) => item.height > 500).url}
+        bgImage={topArtist3?.[0]?.images?.find((item) => item.height > 500).url}
         alt='cover'
         strength={200}
         blur={{ min: -20, max: 20 }}
@@ -87,6 +111,36 @@ const ArtistPage = () => {
         </div>
       </Parallax>
       <ContentWrapper>
+        <Section title='All Time'>
+          <SongListWrapper>
+            {topArtist3.length > 0 &&
+              topArtist3.map((artist, index) => (
+                <SongItemH
+                  key={artist.id}
+                  index={index + 1}
+                  title={artist.name}
+                  subtitle={artist.genres[0]}
+                  cover={artist.images.find((item) => item.height < 200).url}
+                />
+              ))}
+          </SongListWrapper>
+        </Section>
+        <br></br>
+        <Section title='Last 6 Months'>
+          <SongListWrapper>
+            {topArtist2.length > 0 &&
+              topArtist2.map((artist, index) => (
+                <SongItemH
+                  key={artist.id}
+                  index={index + 1}
+                  title={artist.name}
+                  subtitle={artist.genres[0]}
+                  cover={artist.images.find((item) => item.height < 200).url}
+                />
+              ))}
+          </SongListWrapper>
+        </Section>
+        <br></br>
         <Section title='Last 4 Weeks'>
           <SongListWrapper>
             {topArtist.length > 0 &&

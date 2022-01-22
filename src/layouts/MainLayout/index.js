@@ -28,7 +28,7 @@ const MainLayout = (props) => {
   const [track, setTrack] = useState({})
 
   useEffect(() => {
-    spotifyApi.getTrack('0NdAh5vk2C5hVNy54043lj?si=185b6c312ded4136').then(
+    spotifyApi.getTrack('6pzLxfaOuXD6QxAkcKDukY?si=bcdbba30f85544c7').then(
       function (data) {
         console.log(data)
         setTrack(data)
@@ -40,9 +40,9 @@ const MainLayout = (props) => {
   }, [])
 
   const data = {
-    // title: track.name,
-    // subtitle: track.artists[0].name,
-    // cover: track?.album?.images?.find((item) => item.height < 300).url,
+    title: track.name || '',
+    subtitle: track?.artists?.[0]?.name || '',
+    cover: track?.album?.images?.find((item) => item.height > 500).url || '',
   }
 
   return (
