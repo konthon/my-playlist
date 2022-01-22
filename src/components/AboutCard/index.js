@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { ReactComponent as ArrowRightIcon } from 'icons/arrowRight.svg'
+import { Link } from 'react-router-dom'
 
 const Ratio = styled.div`
   position: relative;
@@ -16,6 +17,7 @@ const Ratio = styled.div`
   }
 `
 const Wrapper = styled.div`
+  color: var(--text-base);
   background-image: url(${({ background }) => background});
   background-repeat: no-repeat;
   background-size: cover;
@@ -42,17 +44,19 @@ const Wrapper = styled.div`
 const AboutCard = (props) => {
   const { children, background } = props
   return (
-    <Ratio>
-      <Wrapper background={background}>
-        <div className='card-content-wrapper'>
-          <div className='card-content'>
-            {children}
-            <ArrowRightIcon className='arrow-icon' />
+    <Link to='/about'>
+      <Ratio>
+        <Wrapper background={background}>
+          <div className='card-content-wrapper'>
+            <div className='card-content'>
+              {children}
+              <ArrowRightIcon className='arrow-icon' />
+            </div>
+            {/* {children} */}
           </div>
-          {/* {children} */}
-        </div>
-      </Wrapper>
-    </Ratio>
+        </Wrapper>
+      </Ratio>
+    </Link>
   )
 }
 

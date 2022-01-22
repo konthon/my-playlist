@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { Parallax } from 'react-parallax'
 
@@ -9,6 +9,8 @@ import PlayButton from 'components/PlayButton'
 import Section from 'components/Section'
 import SongItemH from 'components/SongItemH'
 import useSpotify from 'hooks/useSpotify'
+
+import useTitlebar from 'hooks/useTitlebar'
 
 import { ReactComponent as MoreIcon } from 'icons/more.svg'
 
@@ -68,6 +70,8 @@ const SongListWrapper = styled.div`
 
 const PlaylistPage = () => {
   const { spotifyApi } = useSpotify()
+  const { intersectRef, opacity } = useTitlebar()
+
   const popularSongs = [
     {
       cover:
@@ -101,7 +105,7 @@ const PlaylistPage = () => {
   ]
 
   return (
-    <MainLayout title={TITLE}>
+    <MainLayout title={TITLE} opacity={opacity}>
       <Parallax
         bgImage={COVER}
         bgImageStyle={{
@@ -112,7 +116,14 @@ const PlaylistPage = () => {
         strength={200}
         blur={{ min: -20, max: 20 }}
       >
-        <div style={{ height: 375, backdropFilter: 'brightness(0.8)' }}>
+        <div
+          style={{
+            height: 375,
+            backdropFilter: 'brightness(0.8)',
+            background: `rgba(54, 64, 49, ${opacity * 1.2})`,
+          }}
+          ref={intersectRef}
+        >
           <Title>{TITLE}</Title>
         </div>
       </Parallax>

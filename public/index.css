@@ -104,4 +104,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-base);
   background-color: var(--background-base);
+  scroll-behavior: smooth;
 }

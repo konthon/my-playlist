@@ -14,8 +14,8 @@ const Wrapper = styled.header`
 `
 
 const Header = (props) => {
-  const { children } = props
-  return <Wrapper>{children}</Wrapper>
+  const { children, opacity = 1 } = props
+  return <Wrapper style={{ opacity }}>{children}</Wrapper>
 }
 
 export default Header

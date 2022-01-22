@@ -7,6 +7,7 @@ import Section from 'components/Section'
 import SongItemH from 'components/SongItemH'
 
 import useSpotify from 'hooks/useSpotify'
+import useTitlebar from 'hooks/useTitlebar'
 
 const TITLE = 'Top Artists'
 
@@ -46,6 +47,7 @@ const SongListWrapper = styled.div`
 `
 
 const ArtistPage = () => {
+  const { intersectRef, opacity } = useTitlebar()
   const { spotifyApi } = useSpotify()
 
   const [topArtist, setTopArtist] = useState([])
@@ -65,7 +67,7 @@ const ArtistPage = () => {
   }, [])
 
   return (
-    <MainLayout title={TITLE}>
+    <MainLayout title={TITLE} opacity={opacity}>
       <Parallax
         bgImage={topArtist?.[0]?.images?.find((item) => item.height > 500).url}
         bgImageStyle={{
@@ -76,7 +78,14 @@ const ArtistPage = () => {
         strength={200}
         blur={{ min: -20, max: 20 }}
       >
-        <div style={{ height: 375, backdropFilter: 'brightness(0.8)' }}>
+        <div
+          style={{
+            height: 375,
+            backdropFilter: 'brightness(0.8)',
+            background: `rgba(54, 64, 49, ${opacity * 1.2})`,
+          }}
+          ref={intersectRef}
+        >
           <Title>{TITLE}</Title>
         </div>
       </Parallax>
