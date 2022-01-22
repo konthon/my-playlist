@@ -317,13 +317,13 @@ const MainLayout = (props) => {
           )}
         </AnimatePresence> */}
 
-        <Player.Mini
+        {/* <Player.Mini
           title={data.title}
           subtitle={data.subtitle}
           cover={data.cover}
           onOpen={() => setIsOpenPlayer(true)}
           // onTogglePlay={() => player.togglePlay()}
-        />
+        /> */}
 
         {/* <WebPlayback token={accessToken} /> */}
         <TabBar />

@@ -23,7 +23,7 @@ export const SpotifyContext = React.createContext({
 })
 
 export const useSpotifyContext = (options) => {
-  const { redirect = true } = options || {}
+  const { redirect = false } = options || {}
   const context = useContext(SpotifyContext)
   const { accessToken, setAccessToken: setTokenState } = context
 

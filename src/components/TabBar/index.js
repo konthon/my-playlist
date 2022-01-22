@@ -69,11 +69,11 @@ const TabBar = () => {
         <HomeIcon isActive />
         <div className='tab-name'>Home</div>
       </NavButton>
-      <NavButton to='/artist'>
+      <NavButton to='/'>
         <HiUserGroup size={24} />
         <div className='tab-name'>Top Artists</div>
       </NavButton>
-      <NavButton to='/track'>
+      <NavButton to='/'>
         <MdOutlineQueueMusic size={24} />
         <div className='tab-name'>Top Tracks</div>
       </NavButton>
