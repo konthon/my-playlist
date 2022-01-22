@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import { ReactComponent as PlayIcon } from 'icons/play.svg'
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled.div`
   z-index: 2000;
   position: fixed;
   bottom: 54px;
@@ -29,7 +29,7 @@ const Wrapper = styled(motion.div)`
     background: none;
   }
 `
-const Cover = styled(motion.img)`
+const Cover = styled.img`
   width: 36px;
   height: 36px;
   object-fit: cover;
@@ -56,9 +56,9 @@ const MiniPlayer = (props) => {
       <div className='player-left'>
         <Cover src={cover} alt='cover' layoutId='player-cover' />
         <TextWrapper>
-          <motion.div className='title' layoutId='player-title'>
+          <div className='title' layoutId='player-title'>
             {title}
-          </motion.div>
+          </div>
           <div className='subtitle'>{subtitle}</div>
         </TextWrapper>
       </div>
