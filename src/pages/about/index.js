@@ -51,36 +51,18 @@ const AboutPage = () => {
         <ArrowIcon />
       </Button>
       <ContentWrapper>
-        <Cover src='https://source.unsplash.com/random/300x300/' alt='cover' />
-        <ListenerWrapper>
-          <div className='number'>{(12345678).toLocaleString()}</div>
-          <div className='desc'>monthly listeners</div>
-        </ListenerWrapper>
+        <Cover
+          src='https://scontent.fbkk2-8.fna.fbcdn.net/v/t1.15752-9/271790847_1284941788656200_7664182311771782744_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeFycoKXGH0vkx5nmI78j7gvWp5OeQYFPbZank55BgU9tncFfTeAtQKdOWWmhN8gJ_LEb_T_9vXPZmFtmlT6Qja1&_nc_ohc=mDeGDuZGcVcAX_4IiaB&tn=jarqpZDyQpoO5FCF&_nc_ht=scontent.fbkk2-8.fna&oh=03_AVIFOv0y0w_MxAv7fMQY3xotQwIJ_bfBR0gDZlnhgw6aPg&oe=620F2D0D'
+          alt='cover'
+        />
         <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          imperdiet lorem et tellus egestas tristique. Aenean id tempor nisi.
-          Cras sed tortor at leo aliquam sollicitudin vel eget augue. Nullam
-          suscipit at ante a rhoncus. Aliquam faucibus ipsum eu tincidunt
-          maximus. Sed in nisl ut neque laoreet ultricies. Mauris feugiat
-          imperdiet nunc, et molestie eros fermentum eget. Morbi et tempus
-          velit. Etiam hendrerit pretium elit, sed sollicitudin lectus eleifend
-          hendrerit.
-          <br />
-          Cras fringilla eget odio nec facilisis. Duis finibus tellus nec
-          tristique commodo. Sed rutrum orci in magna volutpat dignissim.
-          Pellentesque habitant morbi tristique senectus et netus et malesuada
-          fames ac turpis egestas. Nulla eget gravida justo. Aliquam erat
-          volutpat. Duis purus est, condimentum ac consequat non, cursus nec
-          ante.
-          <br />
-          Cras in orci ullamcorper, venenatis nisl et, malesuada lacus. Donec
-          vehicula commodo tempus. Donec vel lorem vel lectus dictum mattis.
-          Nulla eu quam lacus. Integer in viverra dolor. Vivamus dolor dui,
-          ornare vel imperdiet sit amet, commodo vel magna. Donec auctor
-          fermentum scelerisque. In semper, nunc vitae imperdiet efficitur,
-          sapien mi laoreet dolor, dapibus porttitor ex sapien et nulla. Proin
-          nisi ligula, rhoncus eget dignissim lacinia, vulputate ac erat.
-          Phasellus bibendum diam arcu, at gravida nibh elementum eget.
+          Happy, happy birthday, Pair! <br></br> I hope this year will be your
+          year, with more reasons to smile and more time to rest.<br></br> I
+          wish you all the best and hope you success in everything you do.{' '}
+          <br></br>Have a happy 24th! Love ya!
+          <br></br>
+          <br></br>
+          Nino
         </Paragraph>
       </ContentWrapper>
     </MainLayout>

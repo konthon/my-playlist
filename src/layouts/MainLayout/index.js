@@ -6,6 +6,7 @@ import Header from 'components/Header'
 import Player from 'components/Player'
 import { AnimatePresence } from 'framer-motion'
 import useTitlebar from 'hooks/useTitlebar'
+import useSpotify from 'hooks/useSpotify'
 
 const Wrapper = styled.div`
   background-color: var(--background-elevated-highlight);
@@ -23,11 +24,25 @@ const Container = styled.div`
 const MainLayout = (props) => {
   const { children, title, opacity } = props
   const [isOpenPlayer, setIsOpenPlayer] = useState(false)
+  const { spotifyApi } = useSpotify()
+  const [track, setTrack] = useState({})
+
+  useEffect(() => {
+    spotifyApi.getTrack('0NdAh5vk2C5hVNy54043lj?si=185b6c312ded4136').then(
+      function (data) {
+        console.log(data)
+        setTrack(data)
+      },
+      function (err) {
+        console.error(err)
+      }
+    )
+  }, [])
 
   const data = {
-    title: 'Songsamsi',
-    subtitle: 'Album Name',
-    cover: 'https://source.unsplash.com/random/300x300/',
+    // title: track.name,
+    // subtitle: track.artists[0].name,
+    // cover: track?.album?.images?.find((item) => item.height < 300).url,
   }
 
   return (

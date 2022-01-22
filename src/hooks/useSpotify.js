@@ -12,6 +12,7 @@ const SCOPES = [
   'user-read-playback-state',
   'user-top-read',
   'user-modify-playback-state',
+  'streaming',
 ]
 
 const useSpotify = () => {
@@ -26,7 +27,7 @@ const useSpotify = () => {
     redirectUri: REDIRECT_URI,
   })
   spotifyApi.setAccessToken(
-    'BQACtlpjYnZhijH4jC12kuA0K6bGgaJzpr2o4C_1z455MqiC8jlHN_JD_qo2DAYca0zQpreiKEyUQ_ssanWM8f-rBZXQozl454A9uQ4awmq2hPkVPK6GIddgLtRrz3glTZg4yvxWWjToPoIhgcb2KJCc2e7piJdiKRsCb-u1C41r7VaJ77ev'
+    'BQBLEWC_R8QTzZMFUmUGIu6UapNJZuA6nBrYcxzxOXq1zPyk-yIUckP7UZuInIwmPzUvAh2hE_V_ozpGm0dMYVejA8Yoczb5t3oGKQFoLsd4LLyRf3wuXlSjk-xZoXvrO1d2_5q93cWCEh5rIVFyZtg-dglynNvGTYX5z5J3tTsxETx4obnN6Rw'
   )
 
   return { spotifyApi }

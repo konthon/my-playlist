@@ -69,11 +69,11 @@ const TabBar = () => {
       </NavButton>
       <NavButton to='/artist'>
         <SearchIcon />
-        <div className='tab-name'>Search</div>
+        <div className='tab-name'>Top Artists</div>
       </NavButton>
       <NavButton to='/track'>
         <LibraryIcon />
-        <div className='tab-name'>Your Library</div>
+        <div className='tab-name'>Top Tracks</div>
       </NavButton>
     </Wrapper>
   )

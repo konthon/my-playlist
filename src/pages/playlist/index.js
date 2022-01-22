@@ -155,11 +155,12 @@ const PlaylistPage = () => {
             ))}
           </SongListWrapper>
         </Section>
+        <br />
         <Section title='About'>
-          <AboutCard background='https://source.unsplash.com/random/500x500/'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            molestie sodales rutrum. Pellentesque scelerisque est sit amet
-            tortor euismod posuere. Integer ac nibh semper.
+          <AboutCard background={COVER}>
+            I hope this year will be your year, <br></br>with more reasons to
+            smile and more time to rest.I wish you all the best and hope you
+            success in everything you do. <br></br>Have a happy 24th! Love ya!{' '}
           </AboutCard>
         </Section>
       </ContentWrapper>
