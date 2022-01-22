@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 
-import { SpotifyContext, useSpoifyContext } from 'contexts/spotifyContext'
+import { SpotifyContext } from 'contexts/spotifyContext'
 
 import PlaylistPage from 'pages/playlist'
 import ArtistPage from 'pages/artist'

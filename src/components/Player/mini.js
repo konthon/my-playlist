@@ -50,7 +50,7 @@ const TextWrapper = styled.div`
 `
 
 const MiniPlayer = (props) => {
-  const { title, subtitle, cover, bg, onOpen } = props
+  const { title, subtitle, cover, bg, onOpen, onTogglePlay } = props
   return (
     <Wrapper layoutId='player-wrapper' bg={bg} onClick={onOpen}>
       <div className='player-left'>
@@ -62,7 +62,14 @@ const MiniPlayer = (props) => {
           <div className='subtitle'>{subtitle}</div>
         </TextWrapper>
       </div>
-      <button className='player-right'>
+      <button
+        className='player-right'
+        onClick={(event) => {
+          event.stopPropagation()
+          console.log('play/pause')
+          onTogglePlay?.()
+        }}
+      >
         <PlayIcon />
       </button>
     </Wrapper>
