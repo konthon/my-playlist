@@ -8,6 +8,7 @@ import FollowButton from 'components/FollowButton'
 import PlayButton from 'components/PlayButton'
 import Section from 'components/Section'
 import SongItemH from 'components/SongItemH'
+import useSpotify from 'hooks/useSpotify'
 
 import { ReactComponent as MoreIcon } from 'icons/more.svg'
 
@@ -66,6 +67,7 @@ const SongListWrapper = styled.div`
 `
 
 const PlaylistPage = () => {
+  const { spotifyApi } = useSpotify()
   const popularSongs = [
     {
       cover:
@@ -76,7 +78,7 @@ const PlaylistPage = () => {
     {
       cover:
         'https://s.isanook.com/jo/0/rp/rc/w300h300/ya0xa0m1w0/aHR0cDovL2ltYWdlLmpvb3guY29tL0pPT1hjb3Zlci8wL2Y5ZjU2ZjA3YmRhNmU5MGIvNjQwLmpwZw==.jpg',
-      title: 'Wish You All The Good Thing',
+      title: 'Wish You All The Good Things',
       subtitle: '2,760,678',
     },
     {

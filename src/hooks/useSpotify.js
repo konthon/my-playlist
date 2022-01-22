@@ -26,7 +26,7 @@ const useSpotify = () => {
     redirectUri: REDIRECT_URI,
   })
   spotifyApi.setAccessToken(
-    'BQC6-y8qLm0W7XxYB9RGzCuXII8rVk7pChQLJfVSgVZ6OgGLSqpkCxm-vXr4CAGqZy-1joPvjU8Nzn_YC3AFtGZzXlU1-i0ReHV7d2WIw7YOHDdunICFT-oB-LstDB5W71LHbp0SV3SgkvEw7E4Ta76ifw9tZGkbeZ4HkDBACsEr46b98fSB'
+    'BQACtlpjYnZhijH4jC12kuA0K6bGgaJzpr2o4C_1z455MqiC8jlHN_JD_qo2DAYca0zQpreiKEyUQ_ssanWM8f-rBZXQozl454A9uQ4awmq2hPkVPK6GIddgLtRrz3glTZg4yvxWWjToPoIhgcb2KJCc2e7piJdiKRsCb-u1C41r7VaJ77ev'
   )
 
   return { spotifyApi }
