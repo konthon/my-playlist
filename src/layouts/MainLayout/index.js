@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { AnimatePresence } from 'framer-motion'
 
 import TabBar from 'components/TabBar'
 import Header from 'components/Header'
 import Player from 'components/Player'
-import { AnimatePresence } from 'framer-motion'
-import useTitlebar from 'hooks/useTitlebar'
 
 const Wrapper = styled.div`
   background-color: var(--background-elevated-highlight);
   min-height: 100vh;
+  padding-bottom: env(safe-area-inset-bottom, 8px);
 `
 const Container = styled.div`
   position: relative;

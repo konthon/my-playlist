@@ -5,6 +5,7 @@ import PlaylistPage from 'pages/playlist'
 import ArtistPage from 'pages/artist'
 import TrackPage from 'pages/track'
 import AboutPage from 'pages/about'
+import RedirectTokenPage from 'pages/redirectToken'
 
 function App() {
   const { pathname } = useLocation()
@@ -18,6 +19,7 @@ function App() {
       <Route path='/artist' element={<ArtistPage />} />
       <Route path='/track' element={<TrackPage />} />
       <Route path='/about' element={<AboutPage />} />
+      <Route path='/redirect' element={<RedirectTokenPage />} />
     </Routes>
   )
 }
